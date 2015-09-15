@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CodingHouse Template</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="dist/bundle.js"></script>
   </head>
-  <body ng-app="twitterClone" ng-controller="TweetCtrl">
+  <body ng-app="planets">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
@@ -28,18 +29,27 @@
               {{tweet}}
             </li>
           </ul>
+          <!--<div ng-if="tweetList.length === 0">-->
+            <!--No tweets here...-->
+          <!--</div>-->
 
-          <div ng-if="tweetList.length === 0">
-            No tweets here...
+
+          <div ng-controller="planet-drop-down" ng-selected="selected">
+            Here will be a drop down menu
+            <select ng-model="planet" ng-options ='planet.name for planet in planetArray'>
+              <!--<option ng-repeat="planet in planetArray track by $index">-->
+              <!--{{planet.name}}-->
+              <!--</option>-->
+            </select>
+            <div>{{planet}}</div>
           </div>
-
-          <img ng-src="{{perfectLoop}}" />
 
         </div>
       </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
