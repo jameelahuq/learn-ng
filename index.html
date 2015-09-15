@@ -24,10 +24,16 @@
           </div>
 
           <ul class="list-unstyled" >
-            <li ng-repeat="tweet in tweetList">
+            <li ng-repeat="tweet in tweetList track by $index">
               {{tweet}}
             </li>
           </ul>
+
+          <div ng-if="tweetList.length === 0">
+            No tweets here...
+          </div>
+
+          <img ng-src="{{perfectLoop}}" />
 
         </div>
       </div>
